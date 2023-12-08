@@ -1,1 +1,1 @@
-export { generate as svg } from "./lib/svg.ts";
+export { generate as generateSvg } from "./lib/svg.ts";
