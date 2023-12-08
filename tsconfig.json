@@ -1,22 +1,21 @@
 {
-  "compilerOptions": {
-    "lib": ["ESNext"],
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "bundler",
-    "moduleDetection": "force",
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "composite": true,
-    "strict": true,
-    "downlevelIteration": true,
-    "skipLibCheck": true,
-    "jsx": "react-jsx",
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "types": [
-      "bun-types" // add Bun global
-    ]
-  }
+	"compilerOptions": {
+		/* Base options */
+		"allowJs": true,
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"moduleDetection": "force",
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"target": "es2022",
+		/* Strictness */
+		"noUncheckedIndexedAccess": true,
+		"strict": true,
+		/* We're transpiling with esbuild, and using TypeScript only for type checking */
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"noEmit": true,
+		/* We not running in the DOM */
+		"lib": ["es2022"]
+	}
 }
