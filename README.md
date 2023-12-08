@@ -6,7 +6,7 @@ Generates a random SVG avatar for any given identifier. Always generates the sam
 ## Usage
 
 ```typescript
-import { generateSvg } from "https://deno.land/x/avatar@1.0.0/mod.ts";
+import { generateSvg } from "https://deno.land/x/avatar@v1.0.0/mod.ts";
 
 const avatar = await generateSvg("some-identifier-string");
 ```
