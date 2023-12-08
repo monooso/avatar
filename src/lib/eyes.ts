@@ -82,9 +82,12 @@ const shapes = [
 		<clipPath id="clip1_164_1031">
 			<rect width="64" height="64" rx="32" fill="white"/>
 		</clipPath>
-	</defs>`,
+	</defs>`
 ];
 
+/**
+ * Generates an eyes SVG fragment.
+ */
 export function generate(key: number): string {
-	return shapes[key % shapes.length];
+	return shapes[key % shapes.length] as string;
 }

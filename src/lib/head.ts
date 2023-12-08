@@ -1,9 +1,9 @@
 type ColorMap = { primary: string; secondary: string; shadow: string };
 
 const colors: ColorMap[] = [
-	{ primary: "#836055", secondary: "#68463C", shadow: "#553329" },
-	{ primary: "#F5D0C5", secondary: "#EAC0B3", shadow: "#C99688" },
-	{ primary: "#FFCB7E", secondary: "#F0BD70", shadow: "#E9B05B" },
+	{ primary: '#836055', secondary: '#68463C', shadow: '#553329' },
+	{ primary: '#F5D0C5', secondary: '#EAC0B3', shadow: '#C99688' },
+	{ primary: '#FFCB7E', secondary: '#F0BD70', shadow: '#E9B05B' }
 ];
 
 const shapes = [
@@ -57,11 +57,14 @@ const shapes = [
 		<clipPath id="clip0_602_30">
 			<rect width="64" height="64" fill="white"/>
 		</clipPath>
-	</defs>`,
+	</defs>`
 ];
 
+/**
+ * Generates a hair SVG fragment.
+ */
 export function generate(key: number): string {
-	const color = colors[key % colors.length];
-	const template = shapes[key % shapes.length];
+	const color = colors[key % colors.length] as ColorMap;
+	const template = shapes[key % shapes.length] as Function;
 	return template(color);
 }

@@ -1,11 +1,12 @@
-import * as background from "./background.ts";
-import * as body from "./body.ts";
-import * as eyes from "./eyes.ts";
-import * as glasses from "./glasses.ts";
-import * as hair from "./hair.ts";
-import * as head from "./head.ts";
-import * as mouth from "./mouth.ts";
-import * as mustache from "./mustache.ts";
+import * as crypto from 'node:crypto';
+import * as background from './background.js';
+import * as body from './body.js';
+import * as eyes from './eyes.js';
+import * as glasses from './glasses.js';
+import * as hair from './hair.js';
+import * as head from './head.js';
+import * as mouth from './mouth.js';
+import * as mustache from './mustache.js';
 
 /**
  * Generates a reproducible numeric key from the given string.
@@ -15,7 +16,7 @@ async function generateKey(input: string): Promise<number> {
 	const encoder = new TextEncoder();
 	const data = encoder.encode(input);
 
-	const buffer = await crypto.subtle.digest("SHA-256", data);
+	const buffer = await crypto.subtle.digest('SHA-256', data);
 	const bytes = Array.from(new Uint8Array(buffer));
 
 	return bytes.reduce((sum, byte) => sum + byte);

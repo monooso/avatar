@@ -1,9 +1,9 @@
 type ColorMap = { primary: string; secondary: string };
 
 const colors: ColorMap[] = [
-	{ primary: "#E05A33", secondary: "#C53926" },
-	{ primary: "#3633E0", secondary: "#362ABC" },
-	{ primary: "#FF4DD8", secondary: "#D2499B" },
+	{ primary: '#E05A33', secondary: '#C53926' },
+	{ primary: '#3633E0', secondary: '#362ABC' },
+	{ primary: '#FF4DD8', secondary: '#D2499B' }
 ];
 
 const shapes = [
@@ -43,11 +43,14 @@ const shapes = [
 			<clipPath id="clip1_602_55">
 				<rect width="64" height="64" fill="white"/>
 			</clipPath>
-		</defs>`,
+		</defs>`
 ];
 
+/**
+ * Generates a body SVG fragment.
+ */
 export function generate(key: number): string {
-	const color = colors[key % colors.length];
-	const template = shapes[key % shapes.length];
+	const color = colors[key % colors.length] as ColorMap;
+	const template = shapes[key % shapes.length] as Function;
 	return template(color);
 }

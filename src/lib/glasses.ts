@@ -12,9 +12,12 @@ const shapes = [
 		<clipPath id="clip0_602_105">
 			<rect width="64" height="64" rx="32" fill="white"/>
 		</clipPath>
-	</defs>`,
+	</defs>`
 ];
 
+/**
+ * Generates a glasses SVG fragment.
+ */
 export function generate(key: number): string {
-	return shapes[key % (shapes.length * 5)] || ""; // Not everyone should have glasses
+	return shapes[key % (shapes.length * 5)] || ''; // Not everyone should have glasses
 }
