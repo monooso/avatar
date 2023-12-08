@@ -1,1 +1,1 @@
-export { generate as svg } from './lib/svg.js';
+export { generate as svg } from './lib/svg.ts';

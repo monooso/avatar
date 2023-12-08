@@ -1,21 +1,18 @@
 {
-	"compilerOptions": {
-		/* Base options */
-		"allowJs": true,
-		"esModuleInterop": true,
-		"isolatedModules": true,
-		"moduleDetection": "force",
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"target": "es2022",
-		/* Strictness */
-		"noUncheckedIndexedAccess": true,
-		"strict": true,
-		/* We're transpiling with esbuild, and using TypeScript only for type checking */
-		"module": "ESNext",
-		"moduleResolution": "Bundler",
-		"noEmit": true,
-		/* We not running in the DOM */
-		"lib": ["es2022"]
-	}
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "composite": true,
+    "downlevelIteration": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ESNext"],
+    "module": "esnext",
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext",
+  }
 }
+
