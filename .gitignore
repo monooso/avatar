@@ -1,29 +1,2 @@
-# Build directories
-dist/
-
-# Caches 
-.cache
-.npm
-*.tsbuildinfo
-
-# Logs
-logs
-_.log
-npm-debug.log_
-.node_repl_history
-.pnpm-debug.log*
-
-# Diagnostic reports (https://nodejs.org/api/report.html)
-report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
-
-# Runtime data
-pids
-_.pid
-_.seed
-*.pid.lock
-
-# Dependencies
-node_modules/
-
 # OS
 .DS_Store

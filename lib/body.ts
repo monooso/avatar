@@ -1,13 +1,14 @@
 type ColorMap = { primary: string; secondary: string };
 
 const colors: ColorMap[] = [
-	{ primary: '#E05A33', secondary: '#C53926' },
-	{ primary: '#3633E0', secondary: '#362ABC' },
-	{ primary: '#FF4DD8', secondary: '#D2499B' }
+  { primary: "#E05A33", secondary: "#C53926" },
+  { primary: "#3633E0", secondary: "#362ABC" },
+  { primary: "#FF4DD8", secondary: "#D2499B" },
 ];
 
 const shapes = [
-	(colors: ColorMap) => `<g clip-path="url(#clip0_602_48)">
+  (colors: ColorMap) =>
+    `<g clip-path="url(#clip0_602_48)">
 			<rect x="7" y="60" width="40" height="23" rx="9" fill="${colors.primary}"/>
 			<path d="M17 58H36V61C36 61 31 62 26.5 62C22 62 17 61 17 61V58Z" fill="${colors.primary}"/>
 			<path d="M17 58H36V60C36 60 33 61.5 26.5 61.5C20 61.5 17 60 17 60V58Z" fill="${colors.secondary}"/>
@@ -19,7 +20,8 @@ const shapes = [
 			</clipPath>
 		</defs>`,
 
-	(colors: ColorMap) => `<g clip-path="url(#clip0_602_53)">
+  (colors: ColorMap) =>
+    `<g clip-path="url(#clip0_602_53)">
 			<rect x="7" y="60" width="40" height="23" rx="9" fill="${colors.primary}"/>
 		</g>
 		<defs>
@@ -28,7 +30,8 @@ const shapes = [
 			</clipPath>
 		</defs>`,
 
-	(colors: ColorMap) => `<g clip-path="url(#clip0_602_55)">
+  (colors: ColorMap) =>
+    `<g clip-path="url(#clip0_602_55)">
 			<g clip-path="url(#clip1_602_55)">
 				<rect x="7" y="60" width="40" height="23" rx="9" fill="${colors.primary}"/>
 				<path d="M17 58H36V61C36 61 31 62 26.5 62C22 62 17 61 17 61V58Z" fill="${colors.primary}"/>
@@ -43,14 +46,14 @@ const shapes = [
 			<clipPath id="clip1_602_55">
 				<rect width="64" height="64" fill="white"/>
 			</clipPath>
-		</defs>`
+		</defs>`,
 ];
 
 /**
  * Generates a body SVG fragment.
  */
 export function generate(key: number): string {
-	const color = colors[key % colors.length] as ColorMap;
-	const template = shapes[key % shapes.length] as Function;
-	return template(color);
+  const color = colors[key % colors.length] as ColorMap;
+  const template = shapes[key % shapes.length] as Function;
+  return template(color);
 }
