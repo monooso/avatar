@@ -19,7 +19,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.DENO_CACHE_DIR }}
-          key: ${{ hashFiles("deno.lock") }}
+          key: ${{ hashFiles('deno.lock') }}
 
       # Run checks
       - name: Check formatting
