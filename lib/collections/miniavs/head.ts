@@ -69,6 +69,6 @@ const shapes = [
  */
 export function generate(key: number): string {
   const color = colors[key % colors.length] as ColorMap;
-  const template = shapes[key % shapes.length] as Function;
+  const template = shapes[key % shapes.length] as (colors: ColorMap) => string;
   return template(color);
 }
