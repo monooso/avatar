@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Set up Deno
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
 
       # Cache dependencies
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.DENO_CACHE_DIR }}
           key: ${{ hashFiles('deno.lock') }}
