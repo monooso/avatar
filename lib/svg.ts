@@ -11,7 +11,7 @@ import * as keys from "./keys.ts";
 /**
  * Generates a reproducible SVG image for the given "id".
  */
-export async function generate(id: string): Promise<string> {
+async function generate(id: string): Promise<string> {
   const key = await keys.generate(id);
 
   return `
@@ -27,3 +27,5 @@ export async function generate(id: string): Promise<string> {
 </svg>
   `;
 }
+
+export { generate };
