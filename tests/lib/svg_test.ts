@@ -35,6 +35,24 @@ Deno.test("svg", async (t) => {
     assert(regex.test(svg));
   });
 
+  await t.step(
+    "it generates an svg clip path with the default radius",
+    async () => {
+      const regex = new RegExp('<rect [^>]+ rx="0" ry="0"', "is");
+      const svg = (await generate("test")).trim();
+      assert(regex.test(svg));
+    },
+  );
+
+  await t.step(
+    "it generates an svg clip path with the given radius",
+    async () => {
+      const regex = new RegExp('<rect [^>]+ rx="10" ry="10"', "is");
+      const svg = (await generate("test", { radius: 10 })).trim();
+      assert(regex.test(svg));
+    },
+  );
+
   // keys_test.ts covers the seed validation, this is just a sanity check.
   await t.step("it raises if the seed is invalid", () => {
     assertRejects(() => generate(1));
