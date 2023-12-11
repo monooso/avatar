@@ -8,11 +8,17 @@ import type { Options } from "./options.ts";
  */
 async function generate(seed: string, opts?: Options): Promise<string> {
   const key = await keys.generate(seed);
-  const size = options.validate(opts || {}).size;
+  opts = options.validate(opts || {});
 
   return `
-<svg width="${size}" height="${size}" viewBox="0 0 64 64" fill="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  ${miniavs.generate(key)}
+<svg width="${opts.size}" height="${opts.size}" viewBox="0 0 64 64" fill="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <clipPath id="avatarShape">
+    <rect x="0" y="0" width="64" height="64" rx="${opts.radius}" ry="${opts.radius}" />
+  </clipPath>
+
+  <g clip-path="url(#avatarShape)">
+    ${miniavs.generate(key)}
+  </g>
 </svg>
   `;
 }

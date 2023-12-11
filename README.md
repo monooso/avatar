@@ -9,13 +9,19 @@ generating avatars based on usernames or ids.
 ## Usage
 
 ```typescript
-import { generateSvg } from "https://deno.land/x/avatar@v1.1.0/mod.ts";
+import { generateSvg } from "https://deno.land/x/avatar@v1.2.0/mod.ts";
 
 // Generate an avatar with the default options.
 let avatar = await generateSvg("jimbob");
 
 // Generate an avatar with a custom size.
 avatar = await generateSvg("marysue", { size: 128 });
+
+// Generate an avatar with rounded corners...
+avatar = await generateSvg("billybob", { radius: 10 });
+
+// Or a full circle.
+avatar = await generateSvg("libbymae", { radius: 100, size: 64 });
 ```
 
 ## Credits
