@@ -6,6 +6,38 @@ import {
 } from "https://deno.land/std@0.208.0/assert/mod.ts";
 import { validate } from "../../lib/options.ts";
 
+Deno.test("validate: radius", async (t) => {
+  await t.step("it accepts a non-negative integer", () => {
+    let opts;
+    opts = validate({ radius: 0 });
+    assertEquals(opts.radius, 0);
+
+    opts = validate({ radius: 1 });
+    assertEquals(opts.radius, 1);
+  });
+
+  await t.step("it defaults to 0 if radius is missing", () => {
+    const opts = validate({});
+    assertEquals(opts.radius, 0);
+  });
+
+  await t.step("it defaults to 0 if radius is undefined", () => {
+    const opts = validate({ radius: undefined });
+    assertEquals(opts.radius, 0);
+  });
+
+  await t.step("it raises if radius is less than zero", () => {
+    assertThrows(() => validate({ radius: -1 }));
+  });
+
+  await t.step("it raises if radius is not an integer", () => {
+    assertThrows(() => validate({ radius: 2.1 }));
+    assertThrows(() => validate({ radius: "2" }));
+    assertThrows(() => validate({ radius: {} }));
+    assertThrows(() => validate({ radius: [] }));
+  });
+});
+
 Deno.test("validate: size", async (t) => {
   await t.step("it accepts a valid size", () => {
     const opts = validate({ size: 128 });
