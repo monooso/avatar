@@ -1,7 +1,8 @@
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const validator = z.object({
-  size: z.number().int().min(1).optional().default(64),
+  radius: z.number().int().min(0).default(0),
+  size: z.number().int().min(1).default(64),
 });
 
 type Options = z.input<typeof validator>;
