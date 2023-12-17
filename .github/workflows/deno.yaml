@@ -1,7 +1,7 @@
 name: Deno
 on:
   pull_request:
-    types: [edited, opened, reopened]
+    branches: [main]
   push:
     branches: [main]
 
@@ -31,4 +31,4 @@ jobs:
       - name: Check linting
         run: deno lint
       - name: Run tests
-        run: deno test --parallel
+        run: deno test --allow-net --parallel
