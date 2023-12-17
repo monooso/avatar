@@ -31,4 +31,4 @@ jobs:
       - name: Check linting
         run: deno lint
       - name: Run tests
-        run: deno test --parallel
+        run: deno test --allow-net --parallel
