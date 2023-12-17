@@ -1,11 +1,6 @@
 // @ts-nocheck Disable type checking; we're testing the runtime behaviour.
 
-import {
-  assert,
-  assertEquals,
-  assertNotEquals,
-  assertRejects,
-} from "../test_deps.ts";
+import { assert } from "../test_deps.ts";
 import { generate } from "../../lib/png.ts";
 
 /**
