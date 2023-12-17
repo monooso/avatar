@@ -5,7 +5,7 @@ import {
   assertEquals,
   assertNotEquals,
   assertRejects,
-} from "https://deno.land/std@0.208.0/assert/mod.ts";
+} from "../test_deps.ts";
 import { generate } from "../../lib/svg.ts";
 
 Deno.test("svg", async (t) => {
