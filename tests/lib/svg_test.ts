@@ -53,6 +53,14 @@ Deno.test("svg", async (t) => {
     },
   );
 
+  await t.step("it treats the radius as an absolute value", async () => {
+    // 64 is the default size, 256 is the given size, 10 is the desired radius.
+    const radius = (64 / 256) * 10;
+    const regex = new RegExp(`<rect [^>]+ rx="${radius}" ry="${radius}"`, "is");
+    const svg = (await generate("test", { size: 256, radius: 10 })).trim();
+    assert(regex.test(svg));
+  });
+
   // keys_test.ts covers the seed validation, this is just a sanity check.
   await t.step("it raises if the seed is invalid", () => {
     assertRejects(() => generate(1));
