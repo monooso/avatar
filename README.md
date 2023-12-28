@@ -31,6 +31,7 @@ avatar = await generatePng("cleetus", { radius: 20, size: 256 });
 ```
 
 ## License
+
 Avatar is open source software, released under [the MIT license](./LICENSE.txt).
 
 ## Credits
