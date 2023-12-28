@@ -9,10 +9,7 @@ avatars based on usernames or ids.
 ## Usage
 
 ```typescript
-import {
-  generatePng,
-  generateSvg,
-} from "https://deno.land/x/avatar@v1.3.0/mod.ts";
+import { generatePng, generateSvg } from "https://deno.land/x/avatar/mod.ts";
 
 // Generate an SVG avatar with the default options.
 let avatar = await generateSvg("jimbob");
@@ -31,6 +28,7 @@ avatar = await generatePng("cleetus", { radius: 20, size: 256 });
 ```
 
 ## License
+
 Avatar is open source software, released under [the MIT license](./LICENSE.txt).
 
 ## Credits
