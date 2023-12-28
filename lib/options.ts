@@ -7,14 +7,15 @@ const validator = z.object({
   size: z.number().int().min(1).default(defaults.size),
 });
 
-type Options = z.input<typeof validator>;
+type InputOptions = z.input<typeof validator>;
+type OutputOptions = z.output<typeof validator>;
 
 /**
  * Validates and normalizes the given options. Raises if validation fails.
  */
-function validate(opts: Options): Options {
+function validate(opts: InputOptions): OutputOptions {
   return validator.parse(opts);
 }
 
-export type { Options };
 export { defaults, validate };
+export type { InputOptions, OutputOptions };
